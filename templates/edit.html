@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .button{
+        margin-top: 15px;
+        background-color: rgb(121, 121, 22);
+        color:white;
+        padding: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+</style>
+<form method="POST" style='margin-left: 400px; margin-top: 25px;' action="/update/{{ employee.id }}">
+  {% csrf_token %}
+  <table>
+      <tr><td><input name="eid" required value="{{employee.eid}}"></td></tr>
+      <tr><td><input name="ename" required value="{{employee.ename}}"></td></tr>
+      <tr><td><input name="epassword" required value="{{employee.epassword}}"></td></tr>
+      <tr><td><input name="esalary" required value="{{employee.esalary}}"></td></tr>
+      <tr><td><input name="eemail" required value="{{employee.eemail}}"></td></tr>
+      <tr><td><input name="econtact" required value="{{employee.econtact}}"></td></tr>
+      <tr>
+          <td>
+              <button class="button" type="submit">Update</button>
+          </td>
+      </tr>
+  </table>
+</form>
+{% endblock %}

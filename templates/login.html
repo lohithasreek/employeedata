@@ -1,0 +1,43 @@
+{% load static %}
+
+{% block content %}
+<html>
+<style>
+form
+{margin-left:370px;
+  margin-top:90px;
+  border:1px}
+input{font-size:20px;}
+.button{
+        margin-top: 15px;
+        background-color: rgb(121, 121, 22);
+        color:white;
+        padding: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    body{
+background-image:url({% static 'image/office.jpg' %});
+background-repeat:no-repeat;
+background-size:100%;
+    }
+</style>
+
+
+<form action='' method='post'>
+  <p>Login with your correct username and password</p>
+  {% csrf_token %}
+  <input type=text name='username' placeholder='UserName'><br><br>
+  <input type=password name='password' placeholder='Password'><br><br>
+  <input class="button" type="submit" value="login">
+  <p>If you not login please register here</p>
+  <a style="margin-left: 15px; font-size: 25px; text-decoration: none;" href="/reg">Register</a>
+</form>
+{% for i in messages %}
+{{i}}
+{% endfor %}
+</body>
+</html>
+{% endblock %}

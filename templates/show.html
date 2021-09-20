@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.table-items{
+    color: white;
+    font-family: cursive;
+    font-size: 17px;
+}
+.head{
+    color:rgb(71, 71, 148);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+</style>
+<table class="table table-striped table-items">
+    <tr>
+        <th class='head'>ID</th>
+        <th class='head'>Name</th>
+        <th class='head'>Password</th>
+        <th class='head'>Salary</th>
+        <th class='head'>Email</th>
+        <th class='head'>Contact</th>
+        <th class="head" colspan="2">Action</th>
+    </tr>
+    {% for i in employee %}
+    <tr>
+        <td>{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.epassword}}</td>
+        <td>{{i.esalary}}</td>
+        <td>{{i.eemail}}</td>
+        <td>{{i.econtact}}</td>
+        <td><a style="text-decoration: none;" href="/edit/{{i.id}}">Edit</a></td>
+        <td><a style="text-decoration: none;" href="/delete/{{i.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
