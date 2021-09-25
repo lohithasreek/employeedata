@@ -4,8 +4,8 @@
 <html>
 <style>
 form
-{margin-left:370px;
-  margin-top:90px;
+{margin-left:550px;
+  margin-top:100px;
   border:1px}
 input{font-size:20px;}
 .button{
@@ -27,7 +27,7 @@ background-size:100%;
 
 
 <form action='' method='post'>
-  <p>Login with your correct username and password</p>
+  <p>Login with your valid username and password</p>
   {% csrf_token %}
   <input type=text name='username' placeholder='UserName'><br><br>
   <input type=password name='password' placeholder='Password'><br><br>
